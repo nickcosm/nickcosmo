@@ -1,0 +1,73 @@
+---
+title: Example
+---
+To catch a recruiter or hiring manager's eye, your portfolio landing page needs to present these audits as **high-value business solutions**, not just technical checklists. Accessibility hiring managers look for your ability to audit, prioritize, and systematically fix code.
+
+Here is a clean, conversion-focused markdown layout for your portfolio landing page that presents your audits concisely.
+
+---
+
+**[Your Name] | Digital Accessibility (A11y) Engineer & Developer**
+
+> **Specialist in WCAG 2.2 compliance, assistive technology testing (NVDA / VoiceOver), and semantic front-end remediation.**
+
+---
+
+**🛠️ Accessibility Audits & Remediation Case Studies**
+
+**1. E-Commerce Checkout Flow: Critical Barrier Remediation**
+
+- **Client / Site:** Retail Brand (Anonymised)
+- **Scope:** 4-page checkout funnel with dynamic payment forms.
+- **Initial State:** **34 automated violations**; checkout completely blocked for keyboard-only and screen reader users due to unlabelled custom inputs and broken focus management.
+- **Key Remediation:**
+  - Re-engineered custom select dropdowns into standard semantic forms with explicit `<label>` associations.
+  - Injected accessible live regions (`aria-live="polite"`) to announce dynamic cart updates and inline validation errors instantly to **NVDA**.
+- **The Result:** **Zero automated errors** remaining. Achieved **100% manual keyboard operability**, reducing cart abandonment risks for assistive tech users.
+
+[View Full Audit Report (PDF)] • [View Code Before/After on GitHub]
+
+---
+
+**2. Corporate Web App: Mobile Navigation & Modal Overhaul**
+
+- **Client / Site:** SaaS Platform Dashboard
+- **Scope:** Main responsive navigation layout and dynamic data modals.
+- **Initial State:** **High-severity keyboard trap** inside the mobile hamburger menu. Modals allowed keyboard focus to escape into the background page, confusing screen reader browse modes.
+- **Key Remediation:**
+  - Authored a robust JavaScript focus-trap script conforming to **WAI-ARIA APG patterns**, locking focus inside active mobile menus/modals and mapping the `Esc` key to exit cleanly.
+  - Controlled dynamic states utilizing structural `aria-expanded` and `aria-hidden` attributes.
+- **The Result:** Full compliance with **WCAG 2.2 SC 2.1.2 (No Trap)**. Smooth, logical linear navigation pathing for keyboard-only and power users.
+
+[View Full Audit Report (PDF)] • [View Code Before/After on GitHub]
+
+---
+
+**📋 My Evaluation Stack & Testing Methodology**
+
+I do not rely blindly on automated scanners. My rigorous manual testing matrix ensures comprehensive barrier identification:
+
+- **Automated Baselines:** Axe-core CLI, Accessibility Insights for Web, and WAVE.
+- **Screen Reader Testing:** **NVDA** on Windows 11 (Chrome/Edge), **VoiceOver** on iOS (Safari).
+- **Manual Inspection:** Full keyboard-only pathing, visible focus state checking, 400% browser zoom reflow validation, and high-contrast color contrast analysis via TPGi CCA.
+
+---
+
+**🚀 Looking for an Accessibility Specialist?**
+
+I help engineering teams ship inclusive, compliant code from day one.
+
+**[Download my Resume]** • **[Connect on LinkedIn]** • **[Email Me Direct]**
+
+---
+
+**💡 Portfolio Presentation Tips for Success**
+
+- **Keep it Scannable:** Recruiters spend less than 10 seconds on a portfolio. Highlighting the **Initial State**, your **Key Remediation**, and the **Result** gives them the facts instantly.
+- **Use Business Language:** Notice terms like "reducing cart abandonment risks." Connecting accessibility directly to **business metrics and user retention** proves you think like a high-level engineer.
+- **Anonymise Smartly:** If your past clients didn't explicitly sign off on public audits, simply list them as "Major E-Commerce Retailer" or "B2B SaaS Dashboard" to remain highly professional.
+
+If you want to fine-tune this further, let me know:
+
+- Do you need assistance drafting the **GitHub README files** that will host your code comparisons?
+- Would you like guidance on how to write a **case study introduction** explaining *why* you chose to transition into accessibility?
