@@ -8,9 +8,11 @@ const projects = defineCollection({
     pattern: '**/index.mdoc',
     generateId: ({ entry }) => entry.replace(/\/index\.mdoc$/, ''),
   }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
-    cover: z.string().optional(),
+    // Use the image() helper so Astro treats it as a local asset
+    cover: image().optional(), 
+    coverAlt: z.string().optional(),
   }),
 });
 
