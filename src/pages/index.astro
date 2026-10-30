@@ -17,7 +17,7 @@ const projects = (await getCollection('projects'))
 		<Header />
 		<main id="main-content" class="pb-16 md:flex md:min-h-0 md:flex-1 md:flex-col">
 			<div class="content grid grid-cols-8 gap-x-4 m-4 md:min-h-0 md:flex-1 md:grid-rows-[1fr]">
-				<div class="col-span-8 md:col-span-2 mt-2 md:min-h-0 md:overflow-y-auto">
+				<div class="col-span-8 md:col-span-2 mt-2 md:min-h-0 scheme-dark md:overflow-y-auto">
 					<h2>Freelance web developer with a focus on improving accessibility.</h2>
 					<ul role="list" class="list-inside list-disc mt-5 mb-5">
 						<li>CMS specialist since 2008</li>
@@ -29,9 +29,9 @@ const projects = (await getCollection('projects'))
 					<p>&nbsp;</p>
 					<p>CV: <a target="_blank" href="/Nick_Halstead_CV.pdf">Download my CV</a></p>			
 				</div>
-				<div class="col-span-8 md:col-span-2 mt-2 md:min-h-0 md:overflow-y-auto">
+				<div class="col-span-8 md:col-span-2 mt-2 md:min-h-0 scheme-dark md:overflow-y-auto">
 				</div>
-				<div class="projects col-span-8 md:col-span-4 mt-2 md:min-h-0 md:overflow-y-auto">
+				<div class="projects col-span-8 md:col-span-4 mt-2 md:min-h-0 scheme-dark md:overflow-y-auto">
 					<h2>Selected Projects</h2>
 					<ul role="list" class="list-none">
 						{projects.map((project) => (
