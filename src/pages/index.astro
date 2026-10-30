@@ -1,7 +1,12 @@
 ---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import Head from '../components/Head.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const projects = (await getCollection('projects'))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
 <html lang="en">
@@ -9,51 +14,46 @@ import Footer from '../components/Footer.astro';
 		<Head />
 		<title>Nick Cosmo</title>
 	</head>
-	<body class="dark">
+	<body class="dark md:flex md:h-dvh md:flex-col">
 		<Header />
-		<main id="main-content" class="pb-16">
-			<div class="content grid grid-cols-8 gap-x-4 m-4">
-				<div class="col-span-8 md:col-span-2 mt-2">
+		<main id="main-content" class="pb-16 md:flex md:min-h-0 md:flex-1 md:flex-col">
+			<div class="content grid grid-cols-8 gap-x-4 m-4 md:min-h-0 md:flex-1 md:grid-rows-[1fr]">
+				<div class="col-span-8 md:col-span-2 mt-2 md:min-h-0 md:overflow-y-auto">
 					<h2>Freelance web developer with a focus on improving accessibility.</h2>
 					<ul role="list" class="list-inside list-disc mt-5 mb-5">
 						<li>CMS specialist since 2008</li>
 						<li>Lead developer & Project manager on hundreds of projects</li>
-						<li>Accessibility Remediation Specialist / Engineer</li>
+						<li>Accessibility Remediation Specialist</li>
 						<li>Specialised Legacy / CMS → Modern Static Migration + Performance Specialist</li>
 					</ul>
 					<p>Recent work has focused on auditing and remediating accessibility issues in CMS-based websites, improving WCAG compliance and overall user experience.</p>
 					<p>&nbsp;</p>
-					<p>CV: <a target="_blank" href="/Nick_Halstead_CV.pdf">Download my CV</a></p>
-					<p>&nbsp;</p>
-					<h2>My Evaluation Stack & Testing Methodology</h2>
-					<p>&nbsp;</p>
-					<p>I do not rely blindly on automated scanners. My rigorous manual testing matrix ensures comprehensive barrier identification:</p>
-					<ul>
-						<li>Automated Baselines: Axe-core CLI, Accessibility Insights for Web, and WAVE.</li>
-						<li>Screen Reader Testing: NVDA on Windows 11 (Chrome/Edge).</li>
-						<li>Manual Inspection: Full keyboard-only pathing, visible focus state checking, 400% browser zoom reflow validation, and high-contrast color contrast analysis via TPGi CCA.</li>
-					</ul>
+					<p>CV: <a target="_blank" href="/Nick_Halstead_CV.pdf">Download my CV</a></p>			
 				</div>
-				<div class="col-span-8 md:col-span-2 mt-2">
-					<h2>Selected Clients</h2>
-					<p><a target="_blank" href="https://www.charliehill.org.uk">Charlie Hill</a></p>
-					<p><a target="_blank" href="https://www.mgmoves.co.uk/">MG Moves</a></p>
-					<p><a target="_blank" href="https://www.mequinenzadreamfishing.co.uk/">Mequinenza Dream Fishing</a></p>
-					<p><a target="_blank" href="https://ebro-expert.com/">Ebro Expert</a></p>
-					<p><a target="_blank" href="https://www.jameshood.com/">James Hood</a></p>
-					<p><a target="_blank" href="https://www.poseidonmusic.com/">Poseidon Music</a></p>
-					<p><a target="_blank" href="https://offthewallstainedglass.com/">Off The Wall</a></p>
-					<p><a target="_blank" href="https://www.julianbarnesangling.com/">Julian Barnes</a></p>
-					<p><a target="_blank" href="https://www.butebaptists.org.uk/">Bute Baptists</a></p>
-					<p><a target="_blank" href="https://www.northfieldfestival.org.uk/">Northfield Festival</a></p>
-					<p><a target="_blank" href="https://www.piefingers.net/">Piefingers</a></p>
+				<div class="col-span-8 md:col-span-2 mt-2 md:min-h-0 md:overflow-y-auto">
 				</div>
-				<div class="projects col-span-8 md:col-span-4 mt-2">
+				<div class="projects col-span-8 md:col-span-4 mt-2 md:min-h-0 md:overflow-y-auto">
 					<h2>Selected Projects</h2>
-					<p>Coming soon...</p>
+					<ul role="list" class="list-none">
+						{projects.map((project) => (
+							<li class="mb-6">
+								<a href={`/projects/${project.id}`} class="block">
+									{project.data.cover && (
+										<Image
+											src={project.data.cover}
+											alt={project.data.coverAlt ?? ''}
+											widths={[480, 960, 1440]}
+											sizes="(min-width: 768px) 50vw, 100vw"
+											class="mb-2 h-auto w-full"
+										/>
+									)}
+									{project.data.title}
+								</a>
+							</li>
+						))}
+					</ul>
 				</div>
 			</div>
 		</main>
-		<Footer />
 	</body>
 </html>

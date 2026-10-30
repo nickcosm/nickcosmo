@@ -2,7 +2,6 @@
 import { getEntry, render } from 'astro:content';
 import Head from '../components/Head.astro';
 import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 
 const slug = Astro.params.slug;
 const page = slug ? await getEntry('pages', slug) : undefined;
@@ -33,6 +32,5 @@ if (!page) {
           </div>
       </div>
     </main>
-    <Footer />
   </body>
 </html>

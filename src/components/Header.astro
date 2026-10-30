@@ -3,13 +3,16 @@ import Navigation from './Navigation.astro';
 ---
 <a href="#main-content" class="skip-link">Skip to main content</a> 
 <header class="grid grid-cols-8 gap-x-4 m-4">
-    <div class="col-span-4 md:col-span-2 border-b border-b-mist-700 pb-4">
+    <div class="col-span-4 md:col-span-4 border-b border-b-mist-700 pb-4">
         <a href="/">Nick Cosmo</a>
     </div>
-    <div class="col-span-4 md:col-span-2 border-b border-b-mist-700 pb-4">
+      <div class="col-span-4 md:col-span-3 border-b border-b-mist-700 pb-4">
         <nav>
-            <Navigation />
+          <Navigation />
         </nav>
+    </div>
+    <div class="col-span-4 md:col-span-1 border-b border-b-mist-700 pb-4">
+      <p><a href="mailto:nickcosmo@protonmail.com">Email</a></p>
     </div>
 </header>
 <script>
