@@ -24,13 +24,18 @@ if (!page) {
             {page && Content ? (
               <>
                 <h1>{page.data.title}</h1>
-          </div>
-            <div class="page-content col-span-8 md:col-span-4 mt-2 md:min-h-0 md:overflow-y-auto">
-                <Content />
-            </div>
+                </>
             ) : (
               <h1>Page not found</h1>
             )}
+          </div>
+            <div class="page-content col-span-8 md:col-span-4 mt-2 md:min-h-0 md:overflow-y-auto">
+              {page && Content ? (
+              <Content />
+              ) : (
+              <p>Content not available</p>
+              )}
+            </div>  
           </div>
       </div>
     </main>
