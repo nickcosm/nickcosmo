@@ -17,7 +17,7 @@ const { title } = Astro.props;
 	<body class="dark md:flex md:h-dvh md:flex-col">
 		<main id="main-content" tabindex="-1" class="md:flex md:min-h-0 md:flex-1">
 			<ProjectSidebar />
-			<div class="projects flex-1 scheme-dark md:overflow-y-auto" transition:name="projects" transition:animate="fade">
+			<div class="projects flex-1 m-4 scheme-dark md:overflow-y-auto" transition:name="projects" transition:animate="fade">
 				<div class="page-content">
 					<slot />
 				</div>
