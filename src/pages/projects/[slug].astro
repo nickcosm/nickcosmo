@@ -13,7 +13,7 @@ if (!project) {
 <ProjectLayout title={`${project ? project.data.title : 'Project not found'} / Nick Cosmo`}>
 	
 	{project && Content ? (
-		<article class="content project-content border-b border-b-mist-700">
+		<article class="content project-content m-4 border-b border-b-mist-700">
 			<div class="grid grid-cols-12 gap-x-4 pb-2 my-4 border-b border-b-mist-700">
 				<div class="col-span-4 md:col-span-4">{project.data.client}</div>
 				<div class="col-span-6 md:col-span-6">{project.data.title}</div>
@@ -63,7 +63,7 @@ if (!project) {
 				</div>
 			</div>
 		</article>
-		<div class="grid grid-cols-12 gap-x-4 my-4">
+		<div class="grid grid-cols-12 m-4 gap-x-4 my-4">
 			<div class="col-span-12">
 				<a href="/">Index</a>
 			</div>
